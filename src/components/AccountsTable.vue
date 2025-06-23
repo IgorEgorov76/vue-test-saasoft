@@ -149,6 +149,7 @@ function handleTypeChange(row: TableAccount) {
   if (row.type === 'LDAP') {
     accountsStore.updateAccount(row.id, { type: 'LDAP', password: null })
     row.errors.password = false
+    row.password = null
   } else if (row.type === 'Локальная' && row.password === null) {
     accountsStore.updateAccount(row.id, { type: 'Локальная', password: '' })
   }
